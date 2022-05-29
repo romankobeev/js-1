@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+			content="ie=edge">
+	<title>homework_2</title>
+</head>
+<body>
+<script>
+	'use strict'
+
+	//### Задание 1 ###//
+
+    //пример 1
+    let a = 1, b = 1, c, d;
+    c = ++a;
+    alert(c); // ответ: 2
+	//объявляем переменные a,b,c,d. a и b с присваиванием значения 1. c и d без значения т.е. undefined
+	//поскольку префиксный оператор инкремента находится перед операндом, к операнду прибавляется единица, т.е.
+	//к а прибавили 1, получили 2. и это значение присвоили переменной с, т.е. с = 2.
+
+    //пример 2
+    d = b++;
+    alert(d); //ответ: 1
+	//инкремент находится после операнда, т.е. к операнду (b) прибавится 1, но результатом будет первоначальное значение
+	//операнда b, т.е. d = 1;
+
+    //пример 3
+    c = 2 + ++a;
+    alert(c); //ответ: 5
+    //у а значение было равно 2 из прошлого примера, префиксным инкрементом добавили 1, т.е. a = 3, прибавили 2, получили
+	//c = 5
+
+	//пример 4
+    d = 2 + b++;
+    alert(d); //ответ: 4
+	//постфиксный инкремент сначала возвращает значение, потом прибавляет 1 к операнду, т.е. b из прошлого примера был
+	// равен 2, соответсвенно d = 2 + 2 = 4,после b стал равен 3
+    alert(a); //3
+	//а с предидущим значением(там где префиксный инкремент) равно 3.
+    alert(b); //3
+
+    //### Задание 2 ###//
+    a = 2;
+    let x = 1 + (a *= 2);
+    //*= присваивание с умножением а = 2, (a *= 2 = 2 * 2 = 4), х = 1 + 4 = 5
+
+    //### Задание 3 ###//
+    console.log("============ Задание 3 ============")
+    function homework3() {
+        let a = -10, b = -  20, c;
+        if (a >= 0 && b >= 0) {
+            c = a - b
+			console.log('a и b - положительные, разность a - b = ', c)
+		} else if (a < 0 && b < 0) {
+            c = a * b
+            console.log('a и b - отрицательные, произведение a * b = ', c)
+		} else if (a < 0 && b > 0 || a > 0 && b < 0 ) {
+            c = a + b
+            console.log('a и b - разных знаков, сумма a + b = ', c)
+        }
+	}
+    homework3()
+
+    //### Задание 4 ###//
+    console.log("============ Задание 4 ============")
+    function add(arg1, arg2) {
+            return arg1 + arg2
+		}
+        console.log("3 + 5 = ",add(3,5))
+
+		function substract(arg1, arg2) {
+			return arg1 - arg2
+		}
+		console.log("10 - 4 = ",substract(10,4))
+
+		function devide(arg1, arg2) {
+			return arg1 / arg2
+		}
+		console.log("20 / 4 = ",devide(20,4))
+
+		function multiply(arg1, arg2) {
+			return arg1 * arg2
+		}
+		console.log("8 * 7 = ",multiply(8,7))
+
+    	//### Задание 5 ###//
+	console.log("============ Задание 5 ============")
+    function mathOperation(arg1, arg2, operation){
+        switch (operation) {
+            case 'add':
+                return arg1 + arg2
+            case 'substract':
+                return arg1 - arg2
+            case 'devide':
+                return arg1 / arg2
+            case 'multiply':
+                return arg1 * arg2
+        }
+	}
+    console.log("сложение: 3 + 3 = ",mathOperation(3, 3, 'add'))
+    console.log("вычитание: 7 - 5 = ",mathOperation(7, 5, 'substract'))
+   	console.log("деление: 30 / 3 = ",mathOperation(30, 3, 'devide'))
+    console.log("умножение: 3 * 8 = ",mathOperation(3, 8, 'multiply'))
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
