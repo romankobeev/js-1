@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+			content="ie=edge">
+	<title>homework_4</title>
+</head>
+<body>
+<script>
+    'use strict'
+    // 1.1 Сделайте в стиле es5, а затем в стиле es6 конструктор Product, который принимает параметры name и price,
+    // сохраните их как свойства объекта.
+    // Также объекты типа Product должны иметь метод make25PercentDiscount, который будет уменьшать цену в объекте на 25%.
+    // Имейте в виду, что метод make25PercentDiscount не должен быть внутри функции-конструктора, и также не нужно
+    //
+    // создавать отдельный объект-прототип (как объект transport в уроке).
+
+    //es5
+    function Product(name, price) {
+        this.name = name
+        this.price = price
+    }
+
+    Product.prototype.make25PercentDiscount = function () {
+        this.price = this.price - this.price * 0.25
+    }
+
+    let prod = new Product('bag', 100)
+    console.log(prod)
+    prod.make25PercentDiscount()
+    console.log(prod)
+
+    //es6
+    class Product1 {
+        constructor(name, price) {
+            this.name = name
+            this.price = price
+        }
+
+        make25PercentDiscount() {
+            this.price = this.price - this.price * 0.25
+        }
+
+    }
+
+    let prod2 = new Product1('car', 200)
+    console.log(prod2)
+    prod2.make25PercentDiscount()
+    console.log(prod2)
+
+
+    //1.2 Сделайте в стиле es5, а затем в стиле es6
+    // а) конструктор Post, который принимает параметры author, text, date и сохраняет их как свойства объекта.
+    // Объекты типа Post должны иметь метод edit, который будет принимать текст и записывать его в свойство
+    // text объекта.
+    // б) конструктор AttachedPost, который принимает параметры author, text, date. Проинициализируйте эти свойства
+    // с помощью конструктора Post, чтобы не дублировать код. Также в конструкторе AttachedPost должно создаваться
+    // свойство highlighted со значением false. Унаследуйте в объектах типа AttachedPost методы из Post. Объекты типа
+    // AttachedPost должны иметь метод makeTextHighlighted, который будет назначать свойству highlighted значение true.
+
+    //es 5
+    function Post(author, text, date) {
+        this.author = author
+        this.text = text
+        this.date = date
+    }
+
+    Post.prototype.edit = function (text) {
+        this.text = text
+    }
+
+    let newPost = new Post('kobeev', 'text', '01.06.2022')
+    console.log(newPost)
+    newPost.edit('text2')
+    console.log(newPost)
+
+    function AttachedPost(author, text, date) {
+        this._super.call(this, author, text, date);
+        this.highlighted = false
+    }
+
+    AttachedPost.prototype = Object.create(Post.prototype)
+    AttachedPost.prototype.constructor = AttachedPost;
+    AttachedPost.prototype._super = Post;
+
+    AttachedPost.prototype.makeTextHighlighted = function () {
+        this.highlighted = true
+    }
+
+    let t = new AttachedPost('kobeev2', 'text2', '02.06.2022')
+    console.log(t)
+    t.makeTextHighlighted()
+    console.log(t)
+
+
+    //es6
+    class Post1 {
+        constructor(author, text, date) {
+            this.author = author
+            this.text = text
+            this.date = date
+        }
+
+        edit(text) {
+            this.text = text
+        }
+    }
+
+    let newPost1 = new Post1('kobeev', 'text', '01.06.2022')
+    console.log(newPost1)
+    newPost1.edit('text2')
+    console.log(newPost1)
+
+    class AttachedPost1 extends Post1 {
+        constructor(author, text, date) {
+            super(author, text, date);
+            this.highlighted = false
+        }
+
+        makeTextHighlighted() {
+            this.highlighted = true
+        }
+    }
+
+    let t1 = new AttachedPost1('kobeev2', 'text2', '02.06.2022')
+    console.log(t1)
+    t1.makeTextHighlighted()
+    console.log(t1)
+</script>
+</body>
+</html>
