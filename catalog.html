@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Каталог</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="container">
+          <div class="header-block">
+            <div class="header-block__logo">
+              <img src="img/logo.svg" alt="#" />
+              <a href="#">
+                <img src="img/search.svg" alt="#" />
+              </a>
+
+              <input
+                type="text"
+                class="search"
+                v-model="searchLine"
+                v-on:input="filterGoods"
+              />
+              <!-- {{ searchLine }} -->
+            </div>
+            <div class="header-block__menu">
+              <a class="header-block__burger" href="#">
+                <img src="img/burger-menu.svg" alt="#" />
+              </a>
+              <a class="header-block__cabinet" href="#">
+                <img src="img/cabinet.svg" alt="#" />
+              </a>
+              <a class="header-block__cart" href="#">
+                <img src="img/cart.svg" alt="#" />
+                <div class="header-block__cart-count">0</div>
+                <div class="basket-info">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Название товара</th>
+                        <th>Колличество</th>
+                        <th>Цена за шт.</th>
+                        <th>Итого</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th colspan="4">Товаров в корзине на сумму: $</th>
+                      </tr>
+                    </tfoot>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--include ../includes/main-->
+      <div class="new-arrival">
+        <div class="container">
+          <div class="block-arrival">
+            <span class="block-arrival__title">NEW ARRIVALS</span>
+            <div class="bread-crumb">
+              <a class="block-arrival__link" href="#">HOME</a>
+              <div class="block-arrival__link">/</div>
+              <a class="block-arrival__link" href="#">MEN</a>
+              <div class="block-arrival__link">/</div>
+              <a class="block-arrival__link active" href="#">NEW ARRIVALS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="items-block-catalog container">
+        <div class="items-block__filter">
+          <div class="items-block__filter-sort">
+            <div class="filter-text">FILTER</div>
+            <a class="sort-btn" href="#"><img src="img/sort.svg" alt="#" /></a>
+          </div>
+          <div class="items-block__filter-wrap">
+            <div class="items-block__filter-wrap-title">
+              TRENDING NOW
+              <a href="#"><img src="img/arrow-down.svg" alt="#" /></a>
+            </div>
+            <div class="items-block__filter-wrap-title">
+              SIZE
+              <a href="#"><img src="img/arrow-down.svg" alt="#" /></a>
+            </div>
+            <div class="items-block__filter-wrap-title">
+              PRICE
+              <a href="#"><img src="img/arrow-down.svg" alt="#" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="items-block__cards">
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-1.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-1</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$51.11</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-2.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-2</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$52.12</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-3.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-3</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$53.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-4.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-4</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$54.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-5.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-5</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$55.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-6.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-6</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$56.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-7.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-7</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$57.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-8.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-8</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$58.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="img-block">
+              <img src="img/catalog/catalog-card-9.jpg" alt="#" />
+              <div class="img-block__cart">
+                <a class="img-block__cart-title" href="#">Add to Cart</a>
+              </div>
+            </div>
+            <div class="item-card__body">
+              <div class="card__title">
+                <h3>product-9</h3>
+              </div>
+              <div class="card__subtitle">
+                <p>
+                  Known for her sculptural takes on traditional tailoring,
+                  Australian arbiter of cool Kym Ellery teams up with Moda
+                  Operandi.
+                </p>
+              </div>
+              <div class="card__price">
+                <p>$59.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="paginate-block__btn">
+          <div class="paginate-block__wrapper">
+            <a href=""><img src="img/arrow-left.svg" alt="#" /></a>
+            <a class="btn-paginate" href="">1</a>
+            <a class="btn-paginate" href="">2</a>
+            <a class="btn-paginate" href="">3</a>
+            <a class="btn-paginate" href="">4</a>
+            <a class="btn-paginate" href="">5</a>
+            <a class="btn-paginate" href="">6</a>
+            <a class="btn-paginate" href="">.....</a>
+            <a class="btn-paginate" href="">20</a>
+            <a href=""><img src="img/arrow-right.svg" alt="#" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="benefit-block">
+        <div class="benefit-block__items container">
+          <div class="benefit__item">
+            <div class="benefit__item-img">
+              <img src="img/benefit-1.svg" alt="#" />
+            </div>
+
+            <span class="benefit__item-title">Free Delivery</span>
+            <p class="benefit__item-subtitle">
+              Worldwide delivery on all. Authorit tively morph next-generation
+              innov tion with extensive models.
+            </p>
+          </div>
+          <div class="benefit__item">
+            <div class="benefit__item-img">
+              <img src="img/benefit-2.svg" alt="#" />
+            </div>
+
+            <span class="benefit__item-title">Sales & discounts</span>
+            <p class="benefit__item-subtitle">
+              Worldwide delivery on all. Authorit tively morph next-generation
+              innov tion with extensive models.
+            </p>
+          </div>
+          <div class="benefit__item">
+            <div class="benefit__item-img">
+              <img src="img/benefit-3.svg" alt="#" />
+            </div>
+
+            <span class="benefit__item-title">Quality assurance</span>
+            <p class="benefit__item-subtitle">
+              Worldwide delivery on all. Authorit tively morph next-generation
+              innov tion with extensive models.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-block">
+        <div class="container footer-block-wrapper">
+          <div class="footer-info">
+            <div class="footer-info__img">
+              <img src="img/intersect.png" alt="intersect" />
+            </div>
+
+            <div class="footer-info__title">
+              <p>
+                “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                <i>a pulvinar purus condimentum“</i>
+              </p>
+            </div>
+          </div>
+          <div class="footer-subscr">
+            <p class="footer-subscr__title">SUBSCRIBE</p>
+            <p class="footer-subscr__subtitle">
+              FOR OUR NEWLETTER AND PROMOTION
+            </p>
+            <div class="footer-subscr__input">
+              <input placeholder="Enter You Email" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-block-social">
+        <div class="container footer-soc-wrapper">
+          <div class="footer__copy">© 2021 Brand All Rights Reserved.</div>
+          <div class="footer__social">
+            <a href="#"><img src="img/fb.svg" alt="fb" /></a>
+            <a href="#"><img src="img/inst.svg" alt="inst" /></a>
+            <a href="#"><img src="img/pint.svg" alt="pint" /></a>
+            <a href="#"><img src="img/tw.svg" alt="tw" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>
