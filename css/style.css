@@ -947,7 +947,7 @@ header .header-block__cart-count {
     display: flex;
   }
   .items-block__cards .item-card:last-child {
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -977,15 +977,23 @@ header .header-block__cart-count {
 .items-block__cards .item-card__body {
   background: #f8f8f8;
   padding: 24px 28px 20px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .items-block__cards .img-block {
   position: relative;
+  height: 150px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .items-block__cards .img-block img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
+  height: 100%;
 }
 
 .items-block__cards .img-block__cart {

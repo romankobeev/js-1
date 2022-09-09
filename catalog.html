@@ -32,10 +32,14 @@
               <a class="header-block__cabinet" href="#">
                 <img src="img/cabinet.svg" alt="#" />
               </a>
-              <a class="header-block__cart" href="#">
+              <a
+                class="header-block__cart"
+                @click="showCart = !showCart"
+                href="#"
+              >
                 <img src="img/cart.svg" alt="#" />
                 <div class="header-block__cart-count">0</div>
-                <div class="basket-info">
+                <div class="basket-info" v-bind:class="showCart?'active':''">
                   <table>
                     <thead>
                       <tr>
@@ -95,30 +99,32 @@
           </div>
         </div>
         <div class="items-block__cards">
-          <div class="item-card">
+          <div class="item-card" v-for="product in filtered" :key="product.id">
             <div class="img-block">
-              <img src="img/catalog/catalog-card-1.jpg" alt="#" />
+              <img :src="product.image" alt="#" />
               <div class="img-block__cart">
-                <a class="img-block__cart-title" href="#">Add to Cart</a>
+                <a
+                  class="img-block__cart-title"
+                  href="#"
+                  @click="addToCart(product)"
+                >
+                  Add to Cart
+                </a>
               </div>
             </div>
             <div class="item-card__body">
               <div class="card__title">
-                <h3>product-1</h3>
+                <h3>{{product.title}}</h3>
               </div>
               <div class="card__subtitle">
-                <p>
-                  Known for her sculptural takes on traditional tailoring,
-                  Australian arbiter of cool Kym Ellery teams up with Moda
-                  Operandi.
-                </p>
+                <p>{{product.description}}</p>
               </div>
               <div class="card__price">
-                <p>$51.11</p>
+                <p>{{ product.price }}$</p>
               </div>
             </div>
           </div>
-          <div class="item-card">
+          <!-- <div class="item-card">
             <div class="img-block">
               <img src="img/catalog/catalog-card-2.jpg" alt="#" />
               <div class="img-block__cart">
@@ -301,7 +307,7 @@
                 <p>$59.00</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="paginate-block__btn">
           <div class="paginate-block__wrapper">

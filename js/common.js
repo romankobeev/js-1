@@ -1,25 +1,24 @@
-const API =
-  "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses";
+const API = "https://fakestoreapi.com/products/";
 const app = new Vue({
   el: "#app",
   data: {
     userSearch: "",
     showCart: false,
-    catalogUrl: "/catalogData.json",
-    cartUrl: "getBasket.json",
     cartItems: [],
     filtered: [],
-    imgCart: "https://via.placeholder.com/50x100",
-    product: [],
+    products: [],
     searchLine: "",
-    imgProduct: "https://via.placeholder.com/200x500",
   },
   methods: {
-    // getJson(url) {
-    //   return fetch(url)
-    //     .then((result) => result.json())
-    //     .catch((error) => console.log(error));
-    // },
+    getJson(url) {
+      return fetch(url)
+        .then((result) => result.json())
+        .catch((error) => console.log(error));
+    },
+
+    addToCart(product) {
+      console.log(product);
+    },
 
     // addProduct(item) {
     //   this.getJson(`${API}/addBasket.json`).then((data) => {
@@ -49,36 +48,33 @@ const app = new Vue({
     //   });
     // },
     filterGoods() {
-      console.log(this.$data.searchLine);
-    },
-
-    filter() {
-      let regexp = new RegExp(this.userSearch, "i");
-      this.filtered = this.products.filter((el) =>
-        regexp.test(el.product_name)
-      );
+      this.$data.filtered = [];
+      let regexp = new RegExp(this.$data.searchLine, "i");
+      console.log(regexp);
+      for (let item of this.$data.products) {
+        if (regexp.test(item.title)) {
+          this.$data.filtered.push(item);
+        }
+      }
+      console.log(this.$data.filtered);
     },
   },
   mounted() {
-    // this.getJson(`${API + this.cartUrl}`).then((data) => {
-    //   for (let item of data.contents) {
-    //     this.cartItems.push(item);
-    //   }
-    // }),
-    //   this.getJson(`${API + this.catalogUrl}`).then((data) => {
-    //     for (let item of data) {
-    //       this.$data.products.push(item);
-    //       this.$data.filtered.push(item);
-    //     }
-    //   }),
-    //   this.getJson("getProducts.json").then((data) => {
-    //     for (let item of data) {
-    //       this.products.push(item);
-    //       this.filtered.push(item);
-    //     }
-    //   });
+    this.getJson(API).then((data) => {
+      for (let item of data) {
+        this.products.push(item);
+      }
+      this.$data.filtered = this.$data.products;
+    });
+  },
+
+  watch: {
+    showCart: function () {},
   },
 });
+
+/*
+// эта часть кода из курса базовый JS
 //корзина - пустой массив
 const basket = [];
 
@@ -178,4 +174,4 @@ function addToHtml() {
   });
   table.insertAdjacentHTML("afterbegin", tr);
   totalAmount.textContent = `Товаров в корзине на сумму: ${getTotalAmount()}$`;
-}
+} */
