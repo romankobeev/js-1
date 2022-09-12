@@ -32,13 +32,9 @@
               <a class="header-block__cabinet" href="#">
                 <img src="img/cabinet.svg" alt="#" />
               </a>
-              <a
-                class="header-block__cart"
-                @click="showCart = !showCart"
-                href="#"
-              >
+              <a class="header-block__cart" @click="showCarts" href="#">
                 <img src="img/cart.svg" alt="#" />
-                <div class="header-block__cart-count">0</div>
+                <div class="header-block__cart-count">{{totalCartItems}}</div>
                 <div class="basket-info" v-bind:class="showCart?'active':''">
                   <table>
                     <thead>
@@ -49,9 +45,22 @@
                         <th>Итого</th>
                       </tr>
                     </thead>
+                    <tbody>
+                      <tr v-for="product in cartItems" :key="product.id">
+                        <td>{{product.title}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.price}}</td>
+                        <td>
+                          {{Math.round(product.price * product.quantity)}}
+                        </td>
+                        <td class="remove" @click="removeItem(product)">[х]</td>
+                      </tr>
+                    </tbody>
                     <tfoot>
                       <tr>
-                        <th colspan="4">Товаров в корзине на сумму: $</th>
+                        <th colspan="4">
+                          Товаров в корзине на сумму: {{sum}} $
+                        </th>
                       </tr>
                     </tfoot>
                     <tbody></tbody>
