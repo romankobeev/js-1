@@ -1,0 +1,15 @@
+.h-100vh
+  min-height: 100vh
+
+.bg-grey
+  background-color: #FAFAFA
+
+.min-h-100vh
+  min-height: 100vh
+
+.container-left
+  width: 100%
+  @include md
+    width: calc(768px + (100vw - 768px)/2)
+  @include lg
+    width: calc(1400px + (100vw - 1400px - 20px)/2)
