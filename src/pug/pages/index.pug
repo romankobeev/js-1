@@ -1,0 +1,170 @@
+extends ../layout/main
+
+block variables
+	- var title = '';
+	- var description = '';
+	- var pageClass = '';
+
+block content
+	header
+		.container
+			.header-block
+				.header-block__logo
+					img(src='img/logo.svg', alt='#')
+					a(href='#')
+						img(src='img/search.svg', alt='#')
+				.header-block__menu
+					a.header-block__burger(href='#')
+						img(src='img/burger-menu.svg', alt='#')
+					a.header-block__cabinet(href='#')
+						img(src='img/cabinet.svg', alt='#')
+					a.header-block__cart(href='#')
+						img(src='img/cart.svg', alt='#')
+						.header-block__cart-count 5
+	.header-banner
+		.container
+			.header-banner__wrapper
+				p.header-banner__title
+					| THE BRAND
+					br
+					span.header-banner__subtitle OF LUXERIOUS
+					span.header-banner__subtitle.red  FASHION
+	.main-block
+		.container
+			.cards
+				.cards-item.card-1
+					p.cards-item__title 30% OFF
+					p.cards-item__subtitle FOR WOMAN
+				.card-item.card-2
+					p.cards-item__title HOT DEAL
+					p.cards-item__subtitle FOR MEN
+				.cards-item.card-3
+					p.cards-item__title NEW ARRIVALS
+					p.cards-item__subtitle FOR KIDS
+				.cards-item.card-4
+					p.cards-item__title LUXIROUS & TRENDY
+					p.cards-item__subtitle ACCESORIES
+	.items-block.container
+		.items-block__main-title
+			h2 Featured Items
+			span Shop for items based on what we featured in this week
+		.items-block__cards
+			.item-card
+				.img-block
+					img(src='img/item-card/item-card-1.jpg', alt='#')
+					.img-block__cart
+						a.img-block__cart-title(href='#') Add to Cart
+				.item-card__body
+					.card__title
+						h3 ELLERY X M'O CAPSULE
+					.card__subtitle
+						p Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+					.card__price
+						p $52.00
+			.item-card
+				.img-block
+					img(src='img/item-card/item-card-2.jpg', alt='#')
+					.img-block__cart
+						a.img-block__cart-title(href='#') Add to Cart
+				.item-card__body
+					.card__title
+						h3 ELLERY X M'O CAPSULE
+					.card__subtitle
+						p Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+					.card__price
+						p $52.00
+			.item-card
+				.img-block
+					img(src='img/item-card/item-card-3.jpg', alt='#')
+					.img-block__cart
+						a.img-block__cart-title(href='#') Add to Cart
+				.item-card__body
+					.card__title
+						h3 ELLERY X M'O CAPSULE
+					.card__subtitle
+						p Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+					.card__price
+						p $52.00
+			.item-card
+				.img-block
+					img(src='img/item-card/item-card-4.jpg', alt='#')
+					.img-block__cart
+						a.img-block__cart-title(href='#') Add to Cart
+				.item-card__body
+					.card__title
+						h3 ELLERY X M'O CAPSULE
+					.card__subtitle
+						p Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+					.card__price
+						p $52.00
+			.item-card
+				.img-block
+					img(src='img/item-card/item-card-5.jpg', alt='#')
+					.img-block__cart
+						a.img-block__cart-title(href='#') Add to Cart
+				.item-card__body
+					.card__title
+						h3 ELLERY X M'O CAPSULE
+					.card__subtitle
+						p Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+					.card__price
+						p $52.00
+			.item-card
+				.img-block
+					img(src='img/item-card/item-card-6.jpg', alt='#')
+					.img-block__cart
+						a.img-block__cart-title(href='#') Add to Cart
+				.item-card__body
+					.card__title
+						h3 ELLERY X M'O CAPSULE
+					.card__subtitle
+						p Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
+					.card__price
+						p $52.00
+		.items-block__btn
+			a.btn-all-product(href) Browse All Product
+	.benefit-block
+		.benefit-block__items.container
+			.benefit__item
+				.benefit__item-img
+					img(src='img/benefit-1.svg', alt='#')
+				span.benefit__item-title Free Delivery
+				p.benefit__item-subtitle Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+			.benefit__item
+				.benefit__item-img
+					img(src='img/benefit-2.svg', alt='#')
+				span.benefit__item-title Sales & discounts
+				p.benefit__item-subtitle Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+			.benefit__item
+				.benefit__item-img
+					img(src='img/benefit-3.svg', alt='#')
+				span.benefit__item-title Quality assurance
+				p.benefit__item-subtitle Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+	.footer-block
+		.container.footer-block-wrapper
+			.footer-info
+				.footer-info__img
+					img(src='img/intersect.png', alt='intersect')
+				.footer-info__title
+					p
+						| “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+						i  a pulvinar purus condimentum“
+			.footer-subscr
+				p.footer-subscr__title SUBSCRIBE
+				p.footer-subscr__subtitle FOR OUR NEWLETTER AND PROMOTION
+				.footer-subscr__input
+					input(placeholder='Enter You Email')
+					button Subscribe
+	.footer-block-social
+		.container.footer-soc-wrapper
+			.footer__copy © 2021 Brand All Rights Reserved.
+			.footer__social
+				a(href='#')
+					img(src='img/fb.svg', alt='fb')
+				a(href='#')
+					img(src='img/inst.svg', alt='inst')
+				a(href='#')
+					img(src='img/pint.svg', alt='pint')
+				a(href='#')
+					img(src='img/tw.svg', alt='tw')
+
